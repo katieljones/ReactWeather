@@ -4,6 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import * as Location from 'expo-location'
 import WeatherInfo from './components/WeatherInfo'
 import UnitsPicker from './components/UnitsPicker'
+import ReloadIcon from './components/ReloadIcon'
 //not secure
 const WEATHER_API_KEY = '8227fa9634737d93ad1f03184cfb6e81'
 const BASE_WEATHER_URL = 'https://api.openweathermap.org/data/2.5/weather?'
@@ -44,6 +45,7 @@ export default function App() {
       <StatusBar style="auto" />
         <View style={styles.main}>
           <UnitsPicker unitsSystem={unitsSystem} setUnitsSystem={setUnitsSystem} />
+          <ReloadIcon load={load}/>
           <WeatherInfo currentWeather={currentWeather} />
         </View>
       </View>
