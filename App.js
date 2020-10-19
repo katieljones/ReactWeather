@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import * as Location from 'expo-location'
+import WeatherInfo from './components/WeatherInfo'
 //not secure
 const WEATHER_API_KEY = '8227fa9634737d93ad1f03184cfb6e81'
 const BASE_WEATHER_URL = 'https://api.openweathermap.org/data/2.5/weather?'
@@ -9,7 +10,8 @@ export default function App() {
   const [errorMessage, setErrorMessage] = useState(null)
   const [currentWeather, setCurrentWeather] = useState(null)
   const [unitsSystem, setUnitsSystem] = useState('metric')
-  useEffect(() =>  {
+
+  useEffect(() => {
     load()
   }, [])
   async function load() {
@@ -34,15 +36,15 @@ export default function App() {
     }
   }
   if(currentWeather) {
-    const { main : {temp}} = currentWeather
   return (
     <View style={styles.container}>
     <StatusBar style="auto" />
-    <View style={styles.main}>
-      <Text>{temp}</Text>
-
+      <View style={styles.main}>
+        <WeatherInfo currentWeather={currentWeather} />
+      </View>
     </View>
-  )} else {
+  )
+} else {
     return (
       <View style={styles.container}>
         <Text>{errorMessage}</Text>
