@@ -2,7 +2,7 @@
 
 A weather app compatible on both iOS and Android devices. 
 
-##User Stories
+## User Stories
 ```
 As a User,
 So I can view the weather for my current location,
@@ -24,7 +24,7 @@ So I can see further details about the weather,
 I would like to view details about what it feels like, wind speed, pressure and humidity.
 ```
 
-##Installation 
+## Installation 
 This app uses React Native Expo. 
 
 From the command line:
