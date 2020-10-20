@@ -36,6 +36,6 @@ Run: ```yarn install```
 Run ```expo install ```
 
 To start the server:
-Run ``` expo start ```
+and then ``` expo start ```
 
 When the browser opens, choose which device to open on and enjoy the app! 
